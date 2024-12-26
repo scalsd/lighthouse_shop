@@ -1,0 +1,17 @@
+.owl-next {
+    display: none !important;
+    /* position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10; */
+}
+
+.owl-carousel-wrapper:hover .owl-next {
+    display: block !important;
+}
+
+.breadcumb_area {
+    background-color: #303030 !important;
+}

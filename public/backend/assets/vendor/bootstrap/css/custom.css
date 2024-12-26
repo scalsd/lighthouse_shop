@@ -1,0 +1,78 @@
+
+.navbar {
+    background-color: #242424 !important;
+    color: #d4d3ce !important;
+}
+.sidebar {
+    background-color: #242424 !important;
+    color: #d4d3ce !important;
+}
+.admin-panel-title {
+    color: #986f31;
+    font-size: large;
+    font-weight: bold;
+}
+.btn-toggle-fullwidth {
+    text-decoration: none; 
+    outline: none;
+}
+.btn-toggle-fullwidth:focus {
+    text-decoration: none; 
+    outline: none; 
+}
+.btn-toggle-fullwidth:hover {
+    text-decoration: underline; 
+    text-decoration-color: #986f31; 
+}
+.custom-background {
+    background-color: #303030;
+}
+
+.light-custom-background {
+    background-color: #d4d3ce;
+}
+
+.custom-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    color: #d4d3ce;
+}
+
+.btn-primary {
+    border-color: #986f31 !important;
+}
+
+.input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+}
+
+.sidebar-nav .metismenu>li.active>a {
+    background-color: #303030 !important;
+}
+
+.metismenu a {
+    color: #d4d3ce !important;
+}
+
+.sidebar .main-menu li > a.has-arrow:hover {
+    background-color: #303030 !important;
+    color: #fff !important; 
+}
+
+div.dataTables_wrapper div.dataTables_filter label {
+    color:#d4d3ce;
+}
+
+#left-sidebar {
+    width: 220px !important;
+}
+
+a:hover, a:focus {
+    color: #fff !important;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 5px  !important;
+}
