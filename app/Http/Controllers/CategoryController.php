@@ -145,4 +145,19 @@ class CategoryController extends Controller
         }
         return redirect()->route('category.index');
     }
+    public function getCategories()
+    {
+        $categories = Category::where('status', 'active')->orderBy("id", "DESC")->get();
+        return view('frontend.layouts.header', compact('categories'));
+    }
+    public function bookCategory($slug){
+        $category = Category::with('books')->where("slug",$slug)->first();
+        return view('frontend.pages.book.book-category', compact(['category']));
+    }
+    public function showCategory($slug)
+    {
+        $category = Category::where('slug', $slug)->firstOrFail();
+        return view('category.show', compact('category'));
+    }
+
 }

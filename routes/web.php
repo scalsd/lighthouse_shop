@@ -3,8 +3,10 @@
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\SeriesController;
@@ -23,11 +25,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Frontend
-Route::get('/',[\App\Http\Controllers\Frontend\IndexController::class,'home'])->name('home');
+Route::get('/',[IndexController::class,'home'])->name('home');
 //Book category
-Route::get('book-category/{slug}/', [\App\Http\Controllers\Frontend\IndexController::class,'bookCategory'])->name('book.category');
-//Book detail
-Route::get('book-detail/{slug}/', [\App\Http\Controllers\Frontend\IndexController::class,'bookDetail'])->name('book.detail');
+Route::get('/categories/{slug}', [CategoryController::class, 'bookCategory'])->name('categories.list');
+Route::get('/book-categories/{slug}', [IndexController::class, 'bookCategory'])->name('categories.show'); 
+
+// Book detail
+Route::get('/book-detail/{slug}/', [IndexController::class, 'bookDetail'])->name('book.detail');
+
+
 // End Frontend
 
 
@@ -39,7 +45,7 @@ Route::get('/admin-home', [App\Http\Controllers\HomeController::class, 'index'])
 
 //Admin
 
-Route::group(['prefix'=> 'admin','middleware'=>'auth'], function () {
+Route::group(['prefix'=> 'admin','middleware'=>['auth', 'admin']], function () {
     Route::get('/', [AdminController ::class,'admin'])->name('admin');
 
 
@@ -75,5 +81,10 @@ Route::group(['prefix'=> 'admin','middleware'=>'auth'], function () {
 //Posts Section
     Route::resource('/post', PostController::class);
     Route::post('post_status', [PostController::class,'postStatus'])->name('post.status');
+//Register section
+Route::get('/user/register', [RegisterController::class, 'showRegistrationForm'])->name('user.register');
+Route::post('/user/register', [RegisterController::class, 'register'])->name('user.register.post');
+
+
 
 });

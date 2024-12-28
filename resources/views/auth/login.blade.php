@@ -50,8 +50,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">Войти</button>
                                 <div class="bottom">
-                                    <span class="helper-text m-b-10"><i class="fa fa-lock"></i> <a href="{{ route('password.request') }}" style="color: #7b551c">Забыли пароль?</a></span>
-                                    <span>Еще нет аккаунта? <a href="page-register.html" style="color: #7b551c">Зарегистрироваться</a></span>
+                                    <span>Еще нет аккаунта? <a href="{{route("register")}}" style="color: #7b551c">Зарегистрироваться</a></span>
                                 </div>
                             </form>
                         </div>

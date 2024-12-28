@@ -80,7 +80,7 @@
                 <div class="col-12">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('home')}}">Главная страница</a></li>
-                        <li class="breadcrumb-item active">{{$categories->title}}</li>
+                        <li class="breadcrumb-item active">{{$category->title}}</li>
                     </ol>
                 </div>
             </div>
@@ -112,8 +112,8 @@
 
                     <div class="shop_grid_product_area">
                         <div class="row justify-content-center">
-                            @if(count($categories->books)>0)
-                                @foreach ($categories->books as $item )
+                            @if(count($category->books)>0)
+                                @foreach ($category->books as $item )
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                                         <div class="single-product-area mb-30">
                                             <div class="product_image">
@@ -143,7 +143,7 @@
                     </div>
 
                     <!-- Shop Pagination Area -->
-                    <div class="shop_pagination_area mt-30">
+                    <!-- <div class="shop_pagination_area mt-30">
                         <nav aria-label="Page navigation">
                             <ul class="pagination pagination-sm justify-content-center">
                                 <li class="page-item">
@@ -162,7 +162,7 @@
                                 </li>
                             </ul>
                         </nav>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

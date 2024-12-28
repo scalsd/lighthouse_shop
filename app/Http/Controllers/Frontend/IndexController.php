@@ -12,13 +12,13 @@ class IndexController extends Controller
 {
     public function home(){
         $banners = Banner::where(['status'=>'active'])->orderBy('id','DESC')->limit('4')->get();
-        $categories = Category::where(['status'=> 'active'])->limit('3')->orderBy('id','DESC')->get();
-        return view("frontend.index", compact("banners","categories"));
+        $cut_categories = Category::where(['status'=> 'active'])->limit('3')->orderBy('id','DESC')->get();
+        return view("frontend.index", compact("banners","cut_categories"));
     }
 
     public function bookCategory($slug){
-        $categories = Category::with('books')->where("slug",$slug)->first();
-        return view('frontend.pages.book.book-category', compact(['categories']));
+        $category = Category::with('books')->where("slug",$slug)->first();
+        return view('frontend.pages.book.book-category', compact(['category']));
     }
 
     public function bookDetail($slug){
